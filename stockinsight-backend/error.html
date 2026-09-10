@@ -1,0 +1,70 @@
+Traceback (most recent call last):
+  File "C:\Users\gitan\Desktop\DEP\1\StockInsight\dep\Lib\site-packages\django\db\backends\base\base.py", line 279, in ensure_connection
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "C:\Users\gitan\Desktop\DEP\1\StockInsight\dep\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "C:\Users\gitan\Desktop\DEP\1\StockInsight\dep\Lib\site-packages\django\db\backends\base\base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\gitan\Desktop\DEP\1\StockInsight\dep\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "C:\Users\gitan\Desktop\DEP\1\StockInsight\dep\Lib\site-packages\django\db\backends\postgresql\base.py", line 333, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "C:\Users\gitan\Desktop\DEP\1\StockInsight\dep\Lib\site-packages\psycopg2\__init__.py", line 135, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "aws-1-ap-northeast-2.pooler.supabase.com" (3.39.47.126), port 5432 failed: FATAL:  Tenant or user not found
+connection to server at "aws-1-ap-northeast-2.pooler.supabase.com" (3.39.47.126), port 5432 failed: FATAL:  Tenant or user not found
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\gitan\Desktop\DEP\1\StockInsight\dep\Lib\site-packages\ninja\operation.py", line 134, in run
+    result = self.view_func(request, **values)
+  File "C:\Users\gitan\Desktop\DEP\1\StockInsight\stockinsight-backend\backend\auth_api.py", line 112, in auth_signup
+    if user_model.objects.filter(username__iexact=username).exists():
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\gitan\Desktop\DEP\1\StockInsight\dep\Lib\site-packages\django\db\models\query.py", line 1337, in exists
+    return self.query.has_results(using=self.db)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\gitan\Desktop\DEP\1\StockInsight\dep\Lib\site-packages\django\db\models\sql\query.py", line 681, in has_results
+    return compiler.has_results()
+           ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\gitan\Desktop\DEP\1\StockInsight\dep\Lib\site-packages\django\db\models\sql\compiler.py", line 1592, in has_results
+    return bool(self.execute_sql(SINGLE))
+                ~~~~~~~~~~~~~~~~^^^^^^^^
+  File "C:\Users\gitan\Desktop\DEP\1\StockInsight\dep\Lib\site-packages\django\db\models\sql\compiler.py", line 1622, in execute_sql
+    cursor = self.connection.cursor()
+  File "C:\Users\gitan\Desktop\DEP\1\StockInsight\dep\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "C:\Users\gitan\Desktop\DEP\1\StockInsight\dep\Lib\site-packages\django\db\backends\base\base.py", line 320, in cursor
+    return self._cursor()
+           ~~~~~~~~~~~~^^
+  File "C:\Users\gitan\Desktop\DEP\1\StockInsight\dep\Lib\site-packages\django\db\backends\base\base.py", line 296, in _cursor
+    self.ensure_connection()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\gitan\Desktop\DEP\1\StockInsight\dep\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "C:\Users\gitan\Desktop\DEP\1\StockInsight\dep\Lib\site-packages\django\db\backends\base\base.py", line 278, in ensure_connection
+    with self.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gitan\Desktop\DEP\1\StockInsight\dep\Lib\site-packages\django\db\utils.py", line 94, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\gitan\Desktop\DEP\1\StockInsight\dep\Lib\site-packages\django\db\backends\base\base.py", line 279, in ensure_connection
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "C:\Users\gitan\Desktop\DEP\1\StockInsight\dep\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "C:\Users\gitan\Desktop\DEP\1\StockInsight\dep\Lib\site-packages\django\db\backends\base\base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\gitan\Desktop\DEP\1\StockInsight\dep\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "C:\Users\gitan\Desktop\DEP\1\StockInsight\dep\Lib\site-packages\django\db\backends\postgresql\base.py", line 333, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "C:\Users\gitan\Desktop\DEP\1\StockInsight\dep\Lib\site-packages\psycopg2\__init__.py", line 135, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+django.db.utils.OperationalError: connection to server at "aws-1-ap-northeast-2.pooler.supabase.com" (3.39.47.126), port 5432 failed: FATAL:  Tenant or user not found
+connection to server at "aws-1-ap-northeast-2.pooler.supabase.com" (3.39.47.126), port 5432 failed: FATAL:  Tenant or user not found
+
